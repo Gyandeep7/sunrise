@@ -2,6 +2,7 @@ import React from 'react'
 import { Selectplace } from './station';
 import { global } from './context';
 import { useContext } from 'react';
+
 const Ticket = (props) => {
   const {fromloc,toloc}=props;  
 
@@ -9,17 +10,17 @@ const Ticket = (props) => {
   
   const receivedArray=Selectplace(CityName);
 
-  let const1;
-  let const2;
+  let index1;
+  let index2;
   for (let i=0;i<receivedArray.length;i++){
     if(fromloc==receivedArray[i]){
-      const1=i;
+      index1=i;
     }
     else if(toloc==receivedArray[i]){
-      const2=i
+      index2=i
     }
   }
-  let ticket=const2-const1;
+  let ticket=index2-index1;
   let price;
   if(ticket>0){
     price=ticket*25;

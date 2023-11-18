@@ -5,15 +5,16 @@ import Ticket from "./ticket";
 import { useContext } from "react";
 import Locationselect from "./locations";
 
+
 const Selectplace = (CityName) => {
   if(CityName=='hyderabad'){
-    return ['Bharath Nagar','Kukatpally','Kphb','ESI'];
+      return ['Bharath Nagar','Kukatpally','Kphb','ESI'];
   }
   else if(CityName=='mumbai'){
-    return ['Bandra','Thane','Boravali','Juhu'];
+     return ['Bandra','Thane','Boravali','Juhu'];
   }
   else if(CityName=='delhi'){
-    return ['Rajiv chowk','Krirti nagar','dwaraka','Botanical garden'];
+     return ['Rajiv chowk','Krirti nagar','dwaraka','Botanical garden'];
   }
   else{
     return []
@@ -34,10 +35,9 @@ const Places=()=>{
   const handleToChange = ( value) => {
     setToloc(value);
   };
-
 return(
     <>
-
+    
     <h3>From:</h3><Locationselect names={receivedArray}  onSelectionChange={handleFromChange} /><br></br>
     
     <h3>To:</h3> <Locationselect  names={receivedArray} onSelectionChange={handleToChange} /><br />
